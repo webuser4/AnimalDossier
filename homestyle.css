@@ -30,5 +30,10 @@ body {
 #head {
     display: flex;
     justify-content: center;
-    text-decoration: wavy;
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    text-align: center;
 }
