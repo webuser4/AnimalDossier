@@ -1,47 +1,38 @@
-/* =========================
-   NAVIGATION SETTINGS
-   ========================= */
+/* NAVIGATION SETTINGS */
 
 :root {
-    --nav-background: #212121;
+    --nav-background: #000000;
     --nav-text: #ffffff;
     --nav-height: 60px;
 }
 
 
-/* =========================
-   NAV BUTTON COLORS
-   ========================= */
+/* NAV BUTTON COLORS */
 
-/* Home */
 .nav-home {
     --fill-color: #a6cb11;
     --bar-color: #a6cb11;
     --fill-opacity: 0.2;
 }
 
-/* American Flamingo */
 .nav-flamingo {
     --fill-color: #ff9eb5;
     --bar-color: #ff5f87;
     --fill-opacity: 0.2;
 }
 
-/* Cownose Ray */
 .nav-ray {
     --fill-color: #4da6ff;
     --bar-color: #1f78d1;
     --fill-opacity: 0.2;
 }
 
-/* Galapagos Tortoise */
 .nav-tortoise {
     --fill-color: #87b95a;
     --bar-color: #5f8f3d;
     --fill-opacity: 0.2;
 }
 
-/* Sumatran Orangutan */
 .nav-orangutan {
     --fill-color: #e88b3d;
     --bar-color: #c9651c;
@@ -49,9 +40,7 @@
 }
 
 
-/* =========================
-   MAIN NAVIGATION
-   ========================= */
+/* MAIN NAVIGATION */
 
 #main-nav {
     width: 100%;
@@ -68,9 +57,7 @@
 }
 
 
-/* =========================
-   NAV BUTTON
-   ========================= */
+/* NAV BUTTON */
 
 .nav-button {
     position: relative;
@@ -90,26 +77,25 @@
 }
 
 
-/* =========================
-   NAV TEXT
-   ========================= */
+/* NAV TEXT */
 
 .nav-label {
     position: relative;
     z-index: 2;
 
     margin: 0;
+    padding: 0;
 
     color: var(--nav-text);
 
     font-size: 1.25rem;
     font-weight: 700;
-
     text-align: center;
 
     transform: translateY(0);
 
-    transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
+    transition:
+        transform 0.2s cubic-bezier(0, 0, 0.2, 1);
 }
 
 
@@ -118,60 +104,50 @@
 }
 
 
-/* =========================
-   HOVER FILL
-   ========================= */
+/* HOVER FILL */
 
 .nav-bg-1 {
     position: absolute;
 
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 100%;
+    inset: 0;
 
     z-index: 1;
 
     background-color: var(--fill-color);
     opacity: var(--fill-opacity);
 
-    transform-origin: bottom;
-    transform: scaleY(0);
+    clip-path: inset(100% 0 0 0);
 
-    transition: transform 0.2s ease-out;
+    transition:
+        clip-path 0.12s ease-out;
 }
 
 
 .nav-button:hover > .nav-bg-1 {
-    transform: scaleY(1);
+    clip-path: inset(0 0 0 0);
 }
 
 
-/* =========================
-   BOTTOM BAR
-   ========================= */
+/* BOTTOM BAR */
 
 .nav-bg-2 {
     position: absolute;
 
     left: 0;
+    right: 0;
     bottom: 0;
 
-    width: 100%;
     height: 3px;
 
     z-index: 3;
 
     background-color: var(--bar-color);
 
-    transform-origin: bottom;
-    transform: scaleY(1);
-
-    transition: transform 0.2s ease-out;
+    transition:
+        height 0.12s ease-out;
 }
 
 
 .nav-button:hover > .nav-bg-2 {
-    transform: scaleY(2);
+    height: 6px;
 }
