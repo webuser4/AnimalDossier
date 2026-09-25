@@ -28,17 +28,17 @@ footer {
 #dossier-cards {
     width: min(80rem, 90%);
     margin: 2rem auto;
-
+    
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
 .card {
-    border: .2rem solid #000000;
+    border: 1px solid #cccccc;
     border-radius: 6px;
 
-    background-color: white;
+    background-color: #dddddd;
 
     padding: .5rem;
 
